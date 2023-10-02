@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup} from "@angular/forms";
 import {of} from "rxjs";
 import {UserService} from "../../../services/user.service";
 import {User} from "../../../models/user";
@@ -10,13 +10,13 @@ import {User} from "../../../models/user";
   styleUrls: ['./project-charts.component.css']
 })
 export class ProjectChartsComponent implements OnInit {
-  form: FormGroup;
+  form: UntypedFormGroup;
   projects: any[] = [];
   coreNumber: number = 0;
   arrayNumber: number = 0;
   projectsArray = [1,2,3,4,5];
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private userService: UserService
   ) {
     this.form = this.formBuilder.group({

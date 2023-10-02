@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup} from '@angular/forms';
 import {ProjectModel} from "../../../models/project.model";
 import {DashboardService} from "../../../services/dashboard.service";
 import {ProjectUserService} from "../../../services/project/project-user.service";
@@ -17,7 +17,7 @@ import {OrganisationService} from "../../../services/organization/organisation.s
   styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent implements OnInit {
-  form: FormGroup;
+  form: UntypedFormGroup;
   projects: ProjectModel[] = [];
   coreNumber: number = 4;
   changePage: boolean = false;
@@ -30,7 +30,7 @@ export class ProjectsComponent implements OnInit {
   toIgnoreOrganizationArray2: OrganisationModel[] | null = [];
   toIgnoreOrganizationArray3: OrganisationModel[] | null = [];
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private dashboardService: DashboardService,
               private projectUserService: ProjectUserService,
               private userService: UserService,
