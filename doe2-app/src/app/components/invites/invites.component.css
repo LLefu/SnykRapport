@@ -1,0 +1,10 @@
+h5:hover{
+  color: lightgray!important;
+}
+
+svg:hover{
+  color: lightgray;
+}
+.notbold {
+  font-weight: normal;
+}

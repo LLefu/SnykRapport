@@ -1,0 +1,46 @@
+.content-wrapper img{
+  width: 100%;
+}
+
+.text-wrapper{
+  position: relative;
+  margin-top: -30%;
+  padding-left: 30px;
+  width: 30%;
+}
+
+.text-wrapper h1{
+  font-size: 50px;
+}
+
+.text-wrapper p{
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1271px) {
+
+  .content-wrapper img{
+    display: none;
+  }
+
+  .content-wrapper{
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .text-wrapper{
+    position: center;
+    margin-top: 0%;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .text-wrapper h1{
+    font-size: 50px;
+  }
+
+  .text-wrapper p{
+    font-size: 20px;
+  }
+
+}

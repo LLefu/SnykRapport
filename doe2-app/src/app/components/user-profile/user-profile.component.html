@@ -1,0 +1,187 @@
+<div *ngIf="this.user != null; else userNull" class="container">
+  <div class="main-body">
+    <div class="row gutters-sm">
+      <div class="col-lg-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="mb-3 d-flex flex-column align-items-center text-center">
+              <img src="../../../assets/images/default-user-profile-picture.png" alt=""
+                   class="rounded-circle mainBgColor" width="110">
+              <div class="mt-3">
+                <h4>{{this.user.firstName + ' ' + this.user.lastName}}</h4>
+                <p class="text-secondary mb-1">{{this.user.email}}</p>
+                <p class="text-muted font-size-sm">{{this.user.personalDescription}}</p>
+              </div>
+            </div>
+            <hr class="my-4">
+
+            <h6 *ngIf="getReviewCount() > 0; else noReviews" class=" align-items-center mb-3 "><i
+              class="material-icons text-info mr-2" id="overallRating"></i>Overall Rating:
+              {{getAverageRating()}}({{getReviewCount()}})
+            </h6>
+            <ng-template #noReviews><h6>No Ratings
+            </h6></ng-template>
+            <div *ngIf="!isUser && isProject">
+              <h6 id="attrSelect">Rate an attribute for this user:</h6>
+              <select id="attributeSelector" [(ngModel)]="selectAttribute" class="form-select mb-3"
+                      aria-label="Default select example">
+                <option selected disabled value="">--None selected--</option>
+                <option *ngFor="let attribute of attributes">
+                  {{attribute}}
+                </option>
+              </select>
+              <div *ngIf="this.selectAttribute != undefined" class="row">
+                <div class="col-6 mb-3">
+                  <input type="range" min="1" max="5" value="1" class="slider" id="myRange"
+                         [(ngModel)]="sliderValue">
+                  <output class="float-end">{{sliderValue}}</output>
+                </div>
+                <div class="col-6">
+                  <a (click)="rateUser()"
+                     class="d-flex justify-content-end float-end btn mainBgColor mainText" target="_self"
+                  >Rate</a>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="getRatingsForReceiver() > 0">
+              <h6 (click)="toggleAccordion('review')" data-bs-toggle="collapse" data-bs-target="#reviews"
+                  aria-expanded="true" aria-controls="reviews"
+                  class="cursorPointer">
+                <i id="review" class="mainColor fa fa-caret-right cursorPointer"></i>
+                All ratings
+              </h6>
+            </div>
+            <div id="reviews" class="accordion-collapse collapse">
+              <div *ngFor="let attribute of attributes">
+                <div *ngIf="getAverageRatingForAttribute(attribute) > 0">
+                  <div class="mt-1 d-flex justify-content-between align-items-center">
+                    <small>
+                      {{attribute}}
+                    </small>
+                    <div class="small-ratings"
+                         *ngIf="getAverageRatingForAttribute(attribute) > 0"
+                         [ngStyle]="{'cursor': (!this.isUser) ? 'pointer' : 'default'}">
+                      <i class="fa fa-star mainColor" [attr.id]="attribute+'-'+(i + 1)"
+                         (click)="clickStar($event)"
+                         *ngFor='let in of counter(getAverageRatingForAttribute(attribute)); let i = index;'></i>
+                      <i class="fa fa-star"
+                         [attr.id]="attribute+'-'+((getAverageRatingForAttribute(attribute)) + (i+1))"
+                         (click)="clickStar($event)"
+                         *ngFor='let in of reverseCounter(getAverageRatingForAttribute(attribute)); let i = index;'></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">First Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{this.user.firstName}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Last Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{this.user.lastName}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{this.user.email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Country</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{this.user.country}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Age</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{getAge()}}
+              </div>
+            </div>
+            <hr *ngIf="isUser">
+            <div *ngIf="isUser" class="row">
+              <div class="col-sm-12">
+                <a (click)="editProfile()" class="btn mainBgColor mainText" target="_self"
+                >Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row gutters-sm">
+          <div class="col-sm-6 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="accordion">
+                  <h6 (click)="toggleAccordion('organisation')" data-bs-toggle="collapse"
+                      data-bs-target="#organisations" aria-expanded="true"
+                      aria-controls="organisations" class=" cursorPointer">
+                    <i id="organisation" class="mainColor fa fa-caret-right cursorPointer"></i>
+                    Organisations Overview
+                  </h6>
+                  <div id="organisations" class="accordion-collapse collapse">
+                    <small class="cursorPointer" (click)="goOrganization($event)"
+                           *ngFor="let organization of organizations; let i = index"
+                           [attr.id]="'ORG-'+organization.orgId">
+                      {{this.organization.orgName}}
+                      <br>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="accordion">
+                  <h6 (click)="toggleAccordion('project')" data-bs-toggle="collapse" data-bs-target="#projects"
+                      aria-expanded="true" aria-controls="projects"
+                      class="cursorPointer">
+                    <i id="project" class="mainColor fa fa-caret-right cursorPointer"></i>
+                    Projects Overview
+                  </h6>
+                  <div id="projects" class="accordion-collapse collapse">
+                    <small class="cursorPointer" (click)="goProject($event)"
+                           *ngFor="let project of projects; let i = index"
+                           [attr.id]="'PRJ-' + project.projectId">
+                      {{this.project.projectName}}
+                      <br>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #userNull><h6>User not found or still loading...
+</h6></ng-template>

@@ -1,0 +1,35 @@
+<header id="header" class="d-flex align-items-center topnav">
+  <a class="navbar-brand" >
+    <img src="./assets/images/logo.png" class="d-inline-block align-top" alt="logo">
+    Limitless Engagement
+  </a>
+  <div class="container d-flex align-items-center justify-content-end me-0">
+    <nav id="navbar" class="topnav navbar navbar-expand-lg">
+      <a *ngIf="!userService.isLoggedIn()" class="navException" routerLink="home">Home</a>
+
+      <a *ngIf="userService.isLoggedIn()" (click)="dashboard()" class="navException" routerLink="projects">Dashboard</a>
+
+      <a *ngIf="userService.isLoggedIn()" class="navException" routerLink="create-org">Create organisation</a>
+
+      <a *ngIf="userService.isLoggedIn()" class="navException" routerLink="create-project">Create project</a>
+
+      <a *ngIf="!userService.isLoggedIn()" class="navException" routerLink="register">Register</a>
+
+      <a *ngIf="userService.isLoggedIn()" (click)="profile()" class="navException" routerLink="profile">My Profile</a>
+
+      <a *ngIf="!userService.isLoggedIn(); else loggedInBlock" class="navException" routerLink="login">Login</a>
+
+      <a *ngIf="userService.isLoggedIn()" (click)="invites()" class="navException" routerLink="invites">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<ng-template #loggedInBlock>
+  <a class="navException cursorPointer" (click)="logout()">Log out</a>
+</ng-template>

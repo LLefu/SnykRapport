@@ -1,0 +1,63 @@
+<div class="content">
+  <div class="split2" class="topie">
+    <form [formGroup]="form">
+      <div class="dropdown">
+        <button class="dropbtn">Projects
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <div class="dropdiv" *ngFor="let project of getProjects(); let i = index"
+               (click)="setSelectedProject(project)">
+            <a>{{getProjects()[i].projectName}}</a>
+          </div>
+        </div>
+      </div>
+      <a routerLink="/project-charts" class="aButton">
+        <button class="button2">First time?</button>
+      </a>
+      <a>
+        <button (click)="clickProject()" class="button2" id="buttonProject">Go to project -></button>
+      </a>
+    </form>
+  </div>
+  <div class="split">
+    <div class="text">
+      <app-project-details *ngIf="coreNumber < 4 && selectedProject != undefined || null; else noneSelected"
+                           [coreNumber]="coreNumber"
+                           [organizationArray]="organizationArray"></app-project-details>
+    </div>
+    <ng-template #noneSelected>
+      <div class="detailProject">
+        <p>Select a project and a ring (a degree of engagement) on the left diagram <br> or 'first time?' if you are not
+          familiar with the application</p>
+      </div>
+    </ng-template>
+    <div class="text">
+      <h1 class="title">Degree of Engagement Diagram </h1>
+      <h1 class="title2" *ngIf="selectedProject != undefined || null;">{{selectedProject.projectName}}</h1>
+      <div id="donut-2" class="donut-button">
+        <div class="ring ring1 r-outerLast" (click)="selectOrganization(3)"></div>
+        <div class="ring ring2 r-outer" (click)="selectOrganization(2)"></div>
+        <div class="ring ring3 r-middle" (click)="selectOrganization(1)"></div>
+        <div class="ring ring4 r-center" (click)="selectOrganization(0)"></div>
+      </div>
+
+      <div class="exact">
+        <button id="coreLegendButton" class="selector1" (click)="selectOrganization(0)"></button>
+        <p class="subtitle">Organizations involved in the project</p>
+      </div>
+      <div class="exact">
+        <button id="coreLegendButton1" class="selector2" (click)="selectOrganization(1)"></button>
+        <p class="subtitle">Organizations involved with core project organizations</p>
+      </div>
+      <div class="exact">
+        <button id="coreLegendButton2" class="selector3" (click)="selectOrganization(2)"></button>
+        <p class="subtitle">Organisations with no direct contact with the core project organisations</p>
+      </div>
+      <div class="exact">
+        <button id="coreLegendButton3" class="selector4" (click)="selectOrganization(3)"></button>
+        <p class="subtitle">Organizations involved with non core organizations</p>
+      </div>
+    </div>
+  </div>
+</div>

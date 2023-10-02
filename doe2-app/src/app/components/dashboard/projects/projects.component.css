@@ -1,0 +1,406 @@
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #EB5757;
+
+}
+
+.split {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 25px;
+}
+
+.split2 {
+  background-color: white;
+  top: 100%;
+  width: 50%;
+  left: 50%;
+  transform: translate(50%, 100%);
+  border-radius: 25px;
+}
+
+.text {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: black;
+  transform: translate(25%, -100%);
+}
+
+
+.selector1{
+  width: 5%;
+  height: 10px;
+  transform: translate(350%, -10%);
+  background-color: #05096b;
+}
+
+.selector2{
+  width: 5%;
+  height: 10px;
+  transform: translate(350%, -10%);
+  background-color: #1e23a6;
+}
+
+.selector3{
+  width: 5%;
+  height: 10px;
+  transform: translate(350%, -10%);
+  background-color: #494ed6;
+}
+
+.selector4{
+  width: 5%;
+  height: 10px;
+  transform: translate(350%, -10%);
+  background-color: #7276ed;
+}
+
+.exact{
+  margin-top: -5%;
+}
+
+
+.text .title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1;
+  transform: translate(-50%, 80%);
+}
+
+.text .title2{
+  font-size: 30px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1;
+  transform: translate(-15%, 30%);
+}
+
+.text2 .title .title2{
+  color: black;
+}
+
+.text .desc {
+  font-size: 14px;
+  color: black;
+  font-weight: 300;
+  line-height: 2;
+  margin: 10px 0 30px 0;
+}
+
+.text2 .desc {
+  color: black;
+}
+
+
+.button {
+  font-size: 16px;
+  color: black;
+  background: transparent;
+  border: black solid 2px;
+  padding: 15px 50px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 100px;
+}
+
+.button2{
+  font-size: 16px;
+  color: black;
+  border: 200px;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  background-color: inherit;
+  margin-top: 25px;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+}
+
+
+.buttonLast{
+  font-size: 16px;
+  color: black;
+  background: transparent;
+  border: transparent solid 2px;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.text .button {
+  transition-duration: 0.4s;
+}
+
+.text .button:hover {
+  background-color: black;
+  color: white;
+}
+
+
+
+ .button2 .buttonLast {
+  color: black;
+  border: transparent solid 2px;
+}
+
+/*#buttonProject{
+   float: right;
+}*/
+
+.button2 .buttonLast{
+  transition-duration: 0.4s;
+}
+
+.button2:hover .buttonLast:hover{
+  background-color: black;
+  color: white;
+}
+
+.doughnut{
+  width: 200%;
+  height:200%;
+  border:1px solid black;
+  position:relative;
+  border-radius:200px;
+}
+
+.doughnut:before {
+  content:'';
+  width:50%;
+  height:50%;
+  display:block;
+  position:absolute;
+  top:75%;
+  left:75%;
+  border:1px solid black;
+  border-radius:200px;
+}
+
+.button3{
+  font-size: 16px;
+  color: black;
+  background-color: black;
+  border: black solid 2px;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.donut-button   {
+  position: relative;
+  width:  400px;
+  height: 400px;
+  cursor: pointer;
+  transform: translate(-80%, 20%);
+}
+
+.r-outerLast    { width: 100%; height: 100%; border-width: 80px; top:  0.0%; left:  0.0% }
+.r-outer        { width: 70%; height: 70%; border-width: 60px; top:  15.0%; left:  15.0% }
+.r-middle       { width:  50%; height:  50%; border-width: 60px; top: 25.0%; left: 25.0% }
+.r-center       { width:  25%; height:  25%; border-width: 50px; top: 37.5%; left: 37.5% }
+
+.ring           {
+  position: absolute;
+  border-style : solid;
+  border-radius: 50%;
+  transition: all 50ms;
+}
+
+.ring1{
+  border-color : #7276ed;
+}
+
+.ring2{
+  border-color : #494ed6;
+}
+
+.ring3{
+  border-color : #1e23a6;
+}
+
+.ring4{
+  border-color : #05096b;
+}
+
+.ring:hover     { transform: scale(1.10) }
+.ring:active    { transform: scale(0.95) }
+
+
+.detailProject{
+  transform: translate(60%,-450%);
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
+}
+
+.dropdiv{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  cursor: pointer;
+}
+
+.dropdiv a:focus{
+  background-color: lavender;
+}
+
+.dropdown {
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #c3c3fa;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: fixed;
+}
+
+.topie {
+  overflow: hidden;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  right: 25%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.topie a {
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navNormal{
+  float: left;
+}
+
+.topie a:hover  {
+  background-color: #EB5757;
+  color: black;
+}
+
+.topie a.active  {
+  background-color: white;
+  color: black;
+}
+
+
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #EB5757;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+

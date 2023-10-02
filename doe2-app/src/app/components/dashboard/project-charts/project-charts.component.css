@@ -1,0 +1,316 @@
+.content {
+  position: absolute;
+  width: 100%;
+  background-color: #EB5757;
+  height: 200%;
+}
+
+.split {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 25px;
+}
+
+.split2 {
+  background-color: white;
+  top: 100%;
+  width: 50%;
+  left: 50%;
+  transform: translate(50%, 100%);
+  border-radius: 25px;
+}
+
+
+.subtitle {
+  font-size: 12px;
+  color: black;
+  transform: translate(0%, -100%);
+  padding-left: 6%;
+}
+
+.dropbtn {
+  background-color: #7276ed;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 300px;
+  margin-top: 10%;
+}
+
+.btnExtra{
+  margin-top: 5%;
+}
+
+.dropbtn:hover {background-color: #EB5757;}
+
+
+.selector1{
+  width: 5%;
+  height: 10px;
+  transform: translate(0%, -10%);
+  background-color: #05096b;
+}
+
+.selector2{
+  width: 5%;
+  height: 10px;
+  transform: translate(0%, -10%);
+  background-color: #1e23a6;
+}
+
+.selector3{
+  width: 5%;
+  height: 10px;
+  transform: translate(0%, -10%);
+  background-color: #494ed6;
+}
+
+.selector4{
+  width: 5%;
+  height: 10px;
+  transform: translate(0%, -10%);
+  background-color: #7276ed;
+}
+
+.exact{
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+
+.text .title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1;
+  position: center;
+  padding-left: 16%;
+  padding-top: 5%;
+}
+
+.text2 .title {
+  color: black;
+}
+
+.text .desc {
+  font-size: 14px;
+  color: black;
+  font-weight: 300;
+  line-height: 2;
+  margin: 10px 0 30px 0;
+}
+
+.text2 .desc {
+  color: black;
+}
+
+.detailProject{
+  transform: translate(0%,100%);
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
+}
+
+
+.button {
+  font-size: 16px;
+  color: black;
+  background: transparent;
+  border: black solid 2px;
+  padding: 15px 50px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 100px;
+}
+
+.button2{
+  font-size: 16px;
+  color: black;
+  background: transparent;
+  border: transparent solid 2px;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 100px;
+}
+
+#buttonProject{
+  float: right;
+}
+
+.text .button {
+  transition-duration: 0.4s;
+}
+
+.text .button:hover {
+  background-color: black;
+  color: white;
+}
+
+
+
+.button2 {
+  color: black;
+  border: transparent solid 2px;
+}
+
+.button2 {
+  transition-duration: 0.4s;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+
+
+/* cards*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+  margin-top: 1%;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7276ed;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7276ed;
+}
+
+.donut-button   {
+  left: 50%;
+  transform: translate(-50%, 10%);
+  position: relative;
+  width:  400px;
+  height: 400px;
+  cursor: pointer;
+}
+
+.r-outerLast    { width: 100%; height: 100%; border-width: 80px; top:  0.0%; left:  0.0% }
+.r-outer        { width: 70%; height: 70%; border-width: 60px; top:  15.0%; left:  15.0% }
+.r-middle       { width:  50%; height:  50%; border-width: 60px; top: 25.0%; left: 25.0% }
+.r-center       { width:  25%; height:  25%; border-width: 50px; top: 37.5%; left: 37.5% }
+
+.ring           {
+  position: absolute;
+  border-style : solid;
+  border-radius: 50%;
+  transition: all 50ms;
+}
+
+.ring1{
+  border-color : #7276ed;
+}
+
+.ring2{
+  border-color : #494ed6;
+}
+
+.ring3{
+  border-color : #1e23a6;
+}
+
+.ring4{
+  border-color : #05096b;
+}
+
+
+.wrapper {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-left: 50%;
+  margin-right: 5%;
+}
+
+.legendText{
+  margin-top: -90%;
+}
+
+.orgsText{
+  margin-top: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+

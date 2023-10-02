@@ -1,0 +1,31 @@
+<div class="container secondaryColor rounded-start rounded-end rounded-bottom" style="height: 93.5vh">
+  <div class="row pt-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="mainBgColor rounded-top p-2" style="width: 100%">
+        <div class="container">
+          <div class="row">
+            <div class="col"></div>
+            <h4 class="mainText col" >Create Organization</h4>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded overflow-visible p-5" style="width: 100%">
+        <form (ngSubmit)="submit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" style="height: 335px;" id="description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  </div>
+

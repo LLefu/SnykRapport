@@ -1,0 +1,71 @@
+<div *ngIf="this.user != null; else userNull" class="container">
+  <div class="main-body">
+    <div class="row gutters-sm">
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-body">
+            <form (ngSubmit)="submit()">
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">First Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" value="" placeholder="{{getUser().firstName}}" id="firstName">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Last Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" value="" placeholder="{{getUser().lastName}}" id="lastName">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" value="" placeholder="{{getUser().email}}" id="email">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Country</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" value="" placeholder="{{getUser().country}}" id="country">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Birthdate</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="date" class="form-control" id="dateOfBirth">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Description</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" placeholder="{{getUser().personalDescription}}"
+                         id="personalDescription">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9 text-secondary">
+                  <button type="submit" class="btn mainBgColor mainText" id="userProfileSaveButton">Save Changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #userNull><h6>User not found or still loading...
+</h6></ng-template>

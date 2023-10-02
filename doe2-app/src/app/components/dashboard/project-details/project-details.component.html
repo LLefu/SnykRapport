@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div id="table-scroll">
+    <p class="title">organisations</p>
+    <div *ngIf="coreNumber == 0" class="option">
+      <div class="btn-group-vertical">
+        <div *ngFor="let organization of organizationArray; let i = index" class="dropdown">
+          <br/>
+            <button class="dropbtn" (click)="onClickOrg(organization)">{{organization.orgName}}</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="coreNumber == 1" class="option">
+      <div class="btn-group-vertical">
+      <div *ngFor="let organization of organizationArray; let i = index" class="dropdown">
+        <br/>
+          <button class="dropbtn" (click)="onClickOrg(organization)">{{organization.orgName}}</button>
+      </div>
+      </div>
+    </div>
+    <div *ngIf="coreNumber == 2" class="option">
+      <div class="btn-group-vertical">
+        <div *ngFor="let organization of organizationArray; let i = index" class="dropdown">
+          <br/>
+            <button class="dropbtn" (click)="onClickOrg(organization)">{{organization.orgName}}</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="coreNumber == 3" class="option">
+      <div class="btn-group-vertical">
+        <div *ngFor="let organization of organizationArray; let i = index" class="dropdown">
+          <br/>
+            <button class="dropbtn" (click)="onClickOrg(organization)">{{organization.orgName}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,35 @@
+<div class="container secondaryColor rounded-start rounded-end rounded-bottom" style="height: 93vh">
+  <div class="pt-5 container">
+    <div class="mainBgColor rounded-top p-1">
+      <h1 class="ps-3 mainText">Organisation List</h1>
+    </div>
+    <div class="bg-white rounded" style="height: 75vh;">
+      <div class="p-4">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg" placeholder="Search Here" [(ngModel)]="searchText">
+          </div>
+      </div>
+      <div class="overflow-auto" style="height: 62vh;">
+<!--        <div class="container-fluid">-->
+<!--          <h1 class="row"> NO AVAILABLE USERS</h1>-->
+<!--        </div>-->
+        <div class="container-fluid" *ngFor="let orgs of removeExistingOrgs() | orgFilter: searchText; let i = index">
+          <div class="row p-4 onHover">
+            <div class="col-2"><img class="w-50 border border-dark rounded-circle" src="assets/images/default-user-profile-picture.png" alt="profilePic"></div>
+            <div class="col-8">
+              <h3 class="pt-4">{{orgs.orgName}}</h3>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary align-content-center h-auto w-50 mt-4" (click)="onInvite(orgs)">
+                Invite
+              </button>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

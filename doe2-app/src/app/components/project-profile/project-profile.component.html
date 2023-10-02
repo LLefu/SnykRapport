@@ -1,0 +1,57 @@
+<div class="container secondaryColor rounded-start rounded-end rounded-bottom">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-10">
+      <img class="w-100" src="assets/images/projectbanner.png" alt="banner">
+      <div class="row pt-5">
+        <h1 class="col-8">{{project.projectName}}</h1> <button class="btn btn-main col-2 me-1" *ngIf="isAdmin()" (click)="clickInvite()">Invite member</button> <button class="btn btn-main col-1" *ngIf="isAdmin()" (click)="clickEdit()">Edit</button>
+      </div>
+      <div class="container-fluid"></div>
+      <div class="row pt-3">
+        <div class="col-5">
+          <div>
+            <h4>Description:</h4>
+            <h5 #description>{{project.description}}</h5>
+          </div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col">
+          <div class="pt-2 pb-5">
+            <div class="mainBgColor rounded-top p-2">
+              <h4 class="mainText">Users:</h4>
+            </div>
+            <div class="bg-white rounded overflow-auto" style="height: 200px;">
+              <a routerLink="/profile">
+              <h5 class="ps-4 pt-2"  (click)="clickUser(user)" *ngFor="let user of projectUsers; let i = index">{{projectUsers[i].user.firstName}} {{projectUsers[i].user.lastName}}</h5>
+              </a>
+            </div>
+          </div>
+          <div class="mainBgColor rounded-top p-2 container">
+            <div class="col-5">
+              <svg *ngIf="isAdmin()" (click)="onClickAddOrg()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle" style="color: white; float: right; margin-right: -230px" viewBox="0 0 16 16" >
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg>
+            </div>
+            <div class="col-1">
+              <h4 class="mainText">Organizations:</h4>
+            </div>
+          </div>
+          <div class="bg-white rounded overflow-auto mb-4" style="height: 200px;">
+            <div class="container-fluid" *ngFor="let org of orgs; let i = index">
+              <div class="row pt-2">
+                <div class="col-2"><img class="w-100 border border-dark rounded-circle" src="assets/images/default-user-profile-picture.png" alt="profilePic"></div>
+                <div class="col-8">
+                  <a routerLink="/organization-profile">
+                  <h5 class="pt-2" (click)="clickOrg(orgs[i])">{{orgs[i].orgName}}</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+.mainColor {
+  color: #EB5757 !important;
+}
+
+.mainBgColor {
+  background-color: #EB5757 !important;
+}
+
+.secondaryColor {
+  background-color: #E2E2E2 !important;
+}
+
+.btn-main {
+  color: white !important;
+  background-color: #EB5757 !important;
+  border-color: #EB5757 !important
+}
+
+.mainText {
+  color: white !important;
+}
+
+.secondaryText {
+  color: #5F5F5F !important;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+::selection {
+  color: white !important;
+  background-color: #EB5757 !important;
+}
+

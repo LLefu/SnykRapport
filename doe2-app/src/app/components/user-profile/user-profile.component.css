@@ -1,0 +1,77 @@
+.main-body {
+  padding: 15px;
+}
+
+.ratings {
+  margin-right: 10px
+}
+
+.ratings i {
+  color: #cecece;
+  font-size: 32px
+}
+
+.review-count {
+  font-weight: 400;
+  margin-bottom: 2px;
+  font-size: 24px !important
+}
+
+.small-ratings i {
+  color: #cecece
+}
+
+.review-stat {
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 2px
+}
+
+.form-select:focus {
+  outline: none !important;
+  border: 1px solid #f19d9d !important;
+  box-shadow: 0 0 12px #EB5757 !important;
+}
+
+.form-select option:hover {
+  box-shadow: 0 0 10px 100px #EB5757 inset !important;
+}
+
+.form-select:focus > option:checked {
+  color: white !important;
+  background: #EB5757 !important;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  height: 25px; /* Specified height */
+  background: rgba(255, 71, 71, 0.19); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #EB5757; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #EB5757; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}

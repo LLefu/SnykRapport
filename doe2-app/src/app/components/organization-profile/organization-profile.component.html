@@ -1,0 +1,69 @@
+<div class="container secondaryColor rounded-start rounded-end rounded-bottom" style="height: 100%">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-10">
+      <img class="w-100" src="assets/images/orgbanner.jpg" alt="banner">
+      <div class="row pt-5">
+        <h1 class="col-8">{{org.orgName}}</h1>
+        <button  (click)="clickInvite()" class="btn btn-main col-2 me-1">Invite member</button>
+        <button class="btn btn-main col-1" (click)="clickEdit()">Edit</button>
+      </div>
+      <div class="container-fluid"></div>
+      <div class="row pt-5">
+        <div class="col-5">
+          <div>
+            <h4>Description:</h4>
+            <h5>{{org.description}}</h5>
+            <br>
+            <h6 *ngIf="getCount(org.orgId) > 0; else noReviews" class=" align-items-center mb-3 "><i
+              class="material-icons text-info mr-2" id="overallRating"></i>Overall Rating:
+              {{getAverageScore(org.orgId)}}({{getCount(org.orgId) }})
+            </h6>
+            <ng-template #noReviews><h6>No ratings yet
+            </h6></ng-template>
+            <div class="mt-1 d-flex justify-content-between align-items-center">
+              <div class="small-ratings" [ngStyle]="{'cursor': (this.loggedInUser) ? 'pointer' : 'default'}">
+                <i class="fa fa-star mainColor"
+                   *ngFor='let in of counter(getAverageRound(org.orgId)); let i = index;' [attr.id]="i + 1" (click)="clickStar($event)"></i>
+                <i class="fa fa-star"
+                   *ngFor='let in of reverseCounter(getAverageRound(org.orgId)); let i = index;' [attr.id]="getAverageScore(org.orgId) + (i + 1)" (click)="clickStar($event)"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col">
+          <div class="mainBgColor rounded-top p-2">
+            <h4 class="mainText">Members:</h4>
+          </div>
+          <div class="bg-white rounded overflow-auto" style="height: 300px;">
+            <div class="container-fluid" *ngFor="let person of people; let i = index">
+              <div class="row pt-2">
+                <div class="col-2"><img class="w-100 border border-dark rounded-circle"
+                                        src="assets/images/default-user-profile-picture.png" alt="profilePic"></div>
+                <div class="col-8">
+                  <a routerLink="/profile">
+                  <h5 class="pt-2" (click)="clickUser(person)">{{people[i].firstName}} {{people[i].lastName}}</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 pb-5">
+          <div class="mainBgColor rounded-top p-2">
+            <h4 class="mainText">Projects:</h4>
+          </div>
+          <div class="bg-white rounded overflow-auto" style="height: 70px;"
+               *ngFor="let project of projects; let i = index">
+            <a routerLink="/project-profile">
+            <h5 class="ps-4 pb-2 pt-2" (click)="clickProject(project)">{{projects[i].projectName}}</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+

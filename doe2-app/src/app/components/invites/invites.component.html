@@ -1,0 +1,80 @@
+<div class="container secondaryColor rounded-start rounded-end rounded-bottom">
+  <br>
+  <div class="mainBgColor rounded-top">
+    <h1 class="container-fluid bold pt-2 pb-2 mainText" style="width: 170px;">Invites</h1>
+  </div>
+  <div class="bg-white rounded mb-4" style="height: 100vh;">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div *ngFor="let invite of invites; let i = index">
+    <div class="container-fluid">
+      <div class="row pt-2">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+          <h5 class="pt-2">Invite from User to join their Project</h5>
+          <h5 class="pt-2 hoverable notbold" (click)="clickUser(invites[i].sendingUser.id)">User: {{invites[i].sendingUser.firstName}} {{invites[i].sendingUser.lastName}}</h5>
+          <h5 class="pt-2 hoverable notbold" (click)="clickProject(invites[i].project.projectId)">Project: {{invites[i].project.projectName}}</h5>
+        </div>
+        <div class="col">
+          <svg (click)="onAccept(invites[i])" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" color="green" class="bi bi-check-circle-fill me-2 mt-2" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg>
+          <svg (click)="onDecline(invites[i])" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" color="darkred" class="bi bi-x-circle-fill mt-2" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <hr>
+        </div>
+        <div *ngFor="let organisationInvitation of orgInvites; let i = index">
+          <div class="container-fluid">
+            <div class="row pt-2">
+              <div class="col-2">
+              </div>
+              <div class="col-8">
+                <h5 class="pt-2">Invite from User to join their Organisation</h5>
+                <h5 class="pt-2 hoverable notbold" (click)="clickUser(orgInvites[i].sendingUser.id)">User: {{orgInvites[i].sendingUser.firstName}} {{orgInvites[i].sendingUser.lastName}}</h5>
+                <h5 class="pt-2 hoverable notbold" (click)="clickOrg(organisationInvitation.organisation.orgId)">Organisation: {{organisationInvitation.organisation.orgName}}</h5>
+              </div>
+              <div class="col">
+                <svg (click)="onOrgAccept(orgInvites[i])" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" color="green" class="bi bi-check-circle-fill me-2 mt-2" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <svg (click)="onOrgDecline(orgInvites[i])" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" color="darkred" class="bi bi-x-circle-fill mt-2" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div *ngFor="let organisationProjectInvitation of orgProjectInvites; let i = index">
+          <div class="container-fluid">
+            <div class="row pt-2">
+              <div class="col-2">
+              </div>
+              <div class="col-8">
+                <h5 class="pt-2">Invite from Project to join with your Organisation</h5>
+                <h5 class="pt-2 hoverable notbold" (click)="clickProject(organisationProjectInvitation.fromProject.projectId)">Project: {{organisationProjectInvitation.fromProject.projectName}}</h5>
+                <h5 class="pt-2 hoverable notbold" (click)="clickOrg(organisationProjectInvitation.toOrg.orgId)">Organisation: {{organisationProjectInvitation.toOrg.orgName}}</h5>
+              </div>
+              <div class="col">
+                <svg (click)="onOrgProjectAccept(orgProjectInvites[i])" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" color="green" class="bi bi-check-circle-fill me-2 mt-2" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <svg (click)="onOrgProjectDecline(orgProjectInvites[i])" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" color="darkred" class="bi bi-x-circle-fill mt-2" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+  </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
